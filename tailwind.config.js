@@ -13,6 +13,9 @@ module.exports = {
       'mono': [...defaultTheme.fontFamily.mono]
     },
     extend: {
+      maxWidth: {
+        "content": "max-content"
+      },
       colors: {
         bgBlack: '#0b0b0b',
         arrowBlack: '#161616'

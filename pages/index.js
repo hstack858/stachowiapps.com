@@ -13,13 +13,13 @@ export default function Home() {
       </Head>
 
       <main>
-          <div className="overflow-hidden">
+          <div className="">
               <Navbar />
               <Featured />
+              <List title="Skills"/>
               <List title="Experiences"/>
               <List title="Projects"/>
-              <List title="Skills"/>
-              <List title="Awards"/>
+              <List title="Awards/Certifications"/>
           </div>
       </main>
     </div>

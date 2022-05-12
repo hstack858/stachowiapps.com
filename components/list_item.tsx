@@ -9,18 +9,18 @@ import {
 
 interface ListItemProps {
   image: StaticImageData;
+  title;
 }
 
-const ListItem: React.FC<ListItemProps> = ({ image }) => {
-  const lol = "";
+const ListItem: React.FC<ListItemProps> = ({ image, title }) => {
+  console.log(title);
   return (
-    <div className="w-1/4 h-40 bg-bgBlack mr-2 overflow-hidden cursor-pointer hover:w-1/3 hover:h-50">
+    <div className="w-72 h-56 bg-bgBlack mr-2 overflow-hidden cursor-pointer hover:w-1/3 hover:h-50">
       <Image
         src={image}
         alt=""
         width={100}
-        height={68}
-        objectFit="cover"
+        height={60}
         layout="responsive"
         className="hover:h-50"
       />

@@ -21,6 +21,7 @@ const Featured: React.FC = () => (
         width={100}
         height={50}
         layout="responsive"
+        ob
       />
       <span className="my-4 text-lg">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias

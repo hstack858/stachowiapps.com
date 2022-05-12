@@ -18,6 +18,22 @@ const Navbar: React.FC = () => {
     return "fixed bg-gradient-to-t from-transparent to-bgBlack text-white w-full z-50";
   };
 
+  const scrollToId = (id: string) => {
+    const anchor = document.querySelector(`#${id}`);
+    if (anchor !== null) {
+      anchor.scrollIntoView({ behavior: "smooth", block: "center" });
+    } else {
+      console.log(id, ": can't smooth scroll");
+    }
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <div className={getNavbarClass()}>
       <div className="flex justify-between items-center px-5 h-20">
@@ -29,11 +45,33 @@ const Navbar: React.FC = () => {
             width={100}
             height={100}
           />
-          <span className="cursor-pointer mr-4">Homepage</span>
-          <span className="cursor-pointer mr-4">Experiences</span>
-          <span className="cursor-pointer mr-4">Projects</span>
-          <span className="cursor-pointer mr-4">Skills</span>
-          <span className="cursor-pointer mr-4">Awards</span>
+          <span className="cursor-pointer mr-4" onClick={scrollToTop}>
+            Home
+          </span>
+          <span
+            className="cursor-pointer mr-4"
+            onClick={() => scrollToId("Skills")}
+          >
+            Skills
+          </span>
+          <span
+            className="cursor-pointer mr-4"
+            onClick={() => scrollToId("Experiences")}
+          >
+            Experiences
+          </span>
+          <span
+            className="cursor-pointer mr-4"
+            onClick={() => scrollToId("Projects")}
+          >
+            Projects
+          </span>
+          <span
+            className="cursor-pointer mr-4"
+            onClick={() => scrollToId("Awards")}
+          >
+            Awards/Certifications
+          </span>
         </div>
         <div className="flex items-center">
           <Search className="icon" />
