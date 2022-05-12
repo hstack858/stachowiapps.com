@@ -44,6 +44,7 @@ const ListItem: React.FC<ListItemProps> = ({ image }) => {
         </div>
         <div>Experience</div>
       </div>
+      ß
     </div>
   );
 };
