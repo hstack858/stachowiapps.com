@@ -1,13 +1,16 @@
 import React, { useState } from "react";
 import { Search } from "@material-ui/icons";
+import Image from "next/image";
+import Henflix from "../public/static/henflix.png";
 
+// eslint-disable-next-line react/function-component-definition
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
 
   if (typeof window !== "undefined") {
     window.onscroll = () => {
       setIsScrolled(window.scrollY !== 0);
-      return () => (window.onscroll = null);
+      window.onscroll = null;
     };
   }
 
@@ -38,43 +41,41 @@ const Navbar: React.FC = () => {
     <div className={getNavbarClass()}>
       <div className="flex justify-between items-center px-5 h-20">
         <div className="flex items-center">
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg"
+          <Image
+            src={Henflix}
             alt=""
-            className="ml-10 mr-8"
+            className="ml-12 mr-16"
             width={100}
             height={100}
           />
-          <span className="cursor-pointer mr-4" onClick={scrollToTop}>
-            Home
+          <span className="cursor-pointer mr-4 ml-4">
+            <button type="button" onClick={scrollToTop}>
+              Home
+            </button>
           </span>
-          <span
-            className="cursor-pointer mr-4"
-            onClick={() => scrollToId("Skills")}
-          >
-            Skills
+          <span className="cursor-pointer mr-4">
+            <button type="button" onClick={() => scrollToId("Experiences")}>
+              Experiences
+            </button>
           </span>
-          <span
-            className="cursor-pointer mr-4"
-            onClick={() => scrollToId("Experiences")}
-          >
-            Experiences
+          <span className="cursor-pointer mr-4">
+            <button type="button" onClick={() => scrollToId("Projects")}>
+              Projects
+            </button>
           </span>
-          <span
-            className="cursor-pointer mr-4"
-            onClick={() => scrollToId("Projects")}
-          >
-            Projects
+          <span className="cursor-pointer mr-4">
+            <button type="button" onClick={() => scrollToId("Skills")}>
+              Skills
+            </button>
           </span>
-          <span
-            className="cursor-pointer mr-4"
-            onClick={() => scrollToId("Awards")}
-          >
-            Awards/Certifications
+          <span className="cursor-pointer mr-4">
+            <button type="button" onClick={() => scrollToId("Awards")}>
+              Awards/Certifications
+            </button>
           </span>
         </div>
         <div className="flex items-center">
-          <Search className="icon" />
+          <Search />
         </div>
       </div>
     </div>

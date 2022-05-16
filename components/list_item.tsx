@@ -1,51 +1,58 @@
 import React from "react";
-import Image, { StaticImageData } from "next/image";
-import {
-  Add,
-  PlayArrow,
-  ThumbsUpDownOutlined,
-  ThumbUpAltOutlined,
-} from "@material-ui/icons";
+import Image from "next/image";
+import { PlayArrow } from "@material-ui/icons";
 
 interface ListItemProps {
-  image: StaticImageData;
-  title;
+  image: string;
+  title: string;
+  blurb?: string;
+  dateRange: string;
+  type: string;
 }
 
-const ListItem: React.FC<ListItemProps> = ({ image, title }) => {
-  console.log(title);
+// eslint-disable-next-line react/function-component-definition
+const ListItem: React.FC<ListItemProps> = ({
+  image,
+  title,
+  blurb,
+  dateRange,
+  type,
+}) => {
+  const renderBlurb = () => {
+    if (blurb !== null) {
+      return <div className="desc">{blurb}</div>;
+    }
+    return <div />;
+  };
+
+  console.log(title, image);
   return (
-    <div className="w-72 h-56 bg-bgBlack mr-2 overflow-hidden cursor-pointer hover:w-1/3 hover:h-50">
-      <Image
-        src={image}
-        alt=""
-        width={100}
-        height={60}
-        layout="responsive"
-        className="hover:h-50"
-      />
-      <div>
-        <div className="text-white">
-          <PlayArrow className="text-white" />
-          <Add />
-          <ThumbUpAltOutlined />
-          <ThumbsUpDownOutlined />
-        </div>
-        <div>
-          <span>1 Hour 14 mins</span>
-          <span>+16</span>
-          <span>1999</span>
-        </div>
-        <div>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias
-          aperiam consequatur culpa, error fuga ipsa nihil voluptas. A atque
-          consectetur consequuntur dicta, dignissimos doloribus iusto nostrum
-          quam reiciendis sunt! Voluptate?
-        </div>
-        <div>Experience</div>
+    <div className="list-item group">
+      <div className="image-wrapper">
+        <Image
+          src={image}
+          alt=""
+          className="card-image"
+          width={700}
+          height={400}
+          objectFit="cover"
+        />
       </div>
-      ß
+      <div className="itemInfo invisible">
+        <div className="icons">
+          <PlayArrow className="icon" />
+          <span className="itemInfoTop">
+            <span>{title} </span>
+            <span className="date">{dateRange}</span>
+            <span> {type}</span>
+          </span>
+        </div>
+        {renderBlurb()}
+      </div>
     </div>
   );
+};
+ListItem.defaultProps = {
+  blurb: "",
 };
 export default ListItem;

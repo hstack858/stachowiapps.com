@@ -4,4 +4,143 @@
  html {
      background-color: #0b0b0b;
      scroll-behavior: smooth;
+     color: white;
  }
+
+ .featured {
+     height: 90vh;
+     position: relative;
+ }
+
+ .list {
+     width: 100%;
+     margin-bottom: 1rem;
+ }
+
+ .list .listTitle {
+    color: white;
+     font-size: 1.5rem;
+     font-weight: 500;
+     margin-left: 3.125rem;
+ }
+
+ .list .wrapper {
+     position: relative;
+ }
+
+ .list .wrapper .cont {
+     margin-left: 3.125rem;
+     margin-top: 0.625rem;
+     display: flex;
+     width: max-content;
+     transform: translateX(0rem);
+     transition: all 1s ease;
+ }
+
+ .list .wrapper .sliderArrow {
+     width: 3rem;
+     height: 100%;
+     color: white;
+     position: absolute;
+     z-index: 99;
+     top: 0;
+     bottom: 0;
+     margin: auto;
+     cursor: pointer;
+ }
+
+ .list .wrapper .left {
+    left: 0;
+ }
+.list .wrapper .right {
+    right: 0;
+}
+
+ .list-item {
+     width: 14.063rem;
+     height: 7.5rem;
+     margin-right: 0.313rem;
+     overflow: hidden;
+     cursor: pointer;
+     background-color: #0b0b0b;
+     top: 0;
+     transition: all 200ms;
+     transition-property: width, height, top, visibility, box-shadow, -webkit-box-shadow, padding-bottom, margin-bottom;
+     list-style: none;
+     padding-bottom: 10rem;
+ }
+
+ .list-item:hover {
+     transition-delay: 650ms;
+     width: 20.313rem;
+     height: 18.75rem;
+     -webkit-box-shadow: 0 0 .938rem 0 rgba(255,255,255,0.1);
+     box-shadow: 0 0 .938rem 0 rgba(255,255,255,0.1);
+     position: relative;
+     top: -6rem;
+     margin-bottom: -9rem;
+     padding-bottom: 0;
+ }
+
+ .list-item:hover .itemInfo {
+     visibility: visible;
+     transition-delay: 650ms;
+ }
+
+ .card-image {
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+ }
+
+ .card-image:hover {
+     height: 8.75rem;
+ }
+
+ .itemInfo {
+     display: flex;
+     flex-direction: column;
+     padding: 0.313rem;
+     margin-left: 0.5rem;
+ }
+
+ .itemInfo .icons {
+     display: flex;
+     margin-bottom: 0.625rem;
+     align-items: center;
+     justify-content: start;
+ }
+
+.itemInfo .icons .icon {
+    width: 2rem;
+    height: 2rem;
+    border: 0.125rem solid white;
+    padding: 0.313rem;
+    border-radius: 50%;
+    margin-right: 0.5rem;
+    font-size: 1rem;
+    color: white;
+}
+
+.itemInfoTop {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.625rem;
+    margin-left: 1rem;
+    margin-top: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: gray;
+    justify-content: space-between;
+}
+
+.date {
+    padding: 0.063rem 0.188rem;
+    margin: 0 0.5rem;
+}
+
+.desc {
+    margin-bottom: 0.625rem;
+    font-size: 0.813rem;
+}
+

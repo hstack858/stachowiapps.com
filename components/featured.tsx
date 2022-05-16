@@ -1,13 +1,14 @@
 import React from "react";
 import Image from "next/image";
 import { InfoOutlined, PlayArrow } from "@material-ui/icons";
-import Ozark from "../public/static/ozarkBackground.webp";
-import OzarkTitle from "../public/static/ozarkTitle.webp";
+import SocialNetwork from "../public/static/social_network.webp";
+import SocialNetworkTitle from "../public/static/social_network_title.png";
 
+// eslint-disable-next-line react/function-component-definition
 const Featured: React.FC = () => (
-  <div className="h-screen relative">
+  <div className="featured">
     <Image
-      src={Ozark}
+      src={SocialNetwork}
       alt=""
       width={100}
       height={50}
@@ -16,18 +17,18 @@ const Featured: React.FC = () => (
     />
     <div className="flex flex-col w-1/3 absolute left-20 bottom-40 text-white">
       <Image
-        src={OzarkTitle}
+        src={SocialNetworkTitle}
         alt=""
         width={100}
         height={50}
         layout="responsive"
-        ob
       />
       <span className="my-4 text-lg">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias
-        nulla odio optio quisquam quos sapiente unde voluptatibus? Blanditiis
-        nisi nulla vero. Fuga illum iure nam natus perspiciatis sapiente sed
-        unde.
+        A college junior named Henry Stachowiak starts a sports betting site
+        with his genius roommate and faces the reality of greedy CEOs and
+        investors. What will happen to the currently worthless shares he was
+        given in exchange for almost a year of building the frontend basically
+        alone?
       </span>
       <div className="flex">
         <button

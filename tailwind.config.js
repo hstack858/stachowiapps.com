@@ -16,6 +16,7 @@ module.exports = {
       maxWidth: {
         "content": "max-content"
       },
+      visibility: ["group-hover"],
       colors: {
         bgBlack: '#0b0b0b',
         arrowBlack: '#161616'
