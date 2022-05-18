@@ -25,8 +25,6 @@ const Navbar: React.FC = () => {
     const anchor = document.querySelector(`#${id}`);
     if (anchor !== null) {
       anchor.scrollIntoView({ behavior: "smooth", block: "center" });
-    } else {
-      console.log(id, ": can't smooth scroll");
     }
   };
 
@@ -73,9 +71,6 @@ const Navbar: React.FC = () => {
               Awards/Certifications
             </button>
           </span>
-        </div>
-        <div className="flex items-center">
-          <Search />
         </div>
       </div>
     </div>

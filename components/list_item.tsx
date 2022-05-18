@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import { PlayArrow } from "@material-ui/icons";
 
 interface ListItemProps {
   image: string;
   title: string;
-  blurb?: string;
+  blurb: string;
   dateRange: string;
   type: string;
 }
@@ -18,6 +18,8 @@ const ListItem: React.FC<ListItemProps> = ({
   dateRange,
   type,
 }) => {
+  const [style, setStyle] = useState("list-item group");
+
   const renderBlurb = () => {
     if (blurb !== null) {
       return <div className="desc">{blurb}</div>;
@@ -25,9 +27,18 @@ const ListItem: React.FC<ListItemProps> = ({
     return <div />;
   };
 
-  console.log(title, image);
+  const openModal = () => {
+    setStyle("list-item-modal");
+  };
+
   return (
-    <div className="list-item group">
+    // eslint-disable-next-line jsx-a11y/click-events-have-key-events,jsx-a11y/no-static-element-interactions
+    <div
+      className={style}
+      // onClick={() => {
+      //   openModal();
+      // }}
+    >
       <div className="image-wrapper">
         <Image
           src={image}
@@ -38,7 +49,7 @@ const ListItem: React.FC<ListItemProps> = ({
           objectFit="cover"
         />
       </div>
-      <div className="itemInfo invisible">
+      <div className="itemInfo">
         <div className="icons">
           <PlayArrow className="icon" />
           <span className="itemInfoTop">
@@ -52,7 +63,5 @@ const ListItem: React.FC<ListItemProps> = ({
     </div>
   );
 };
-ListItem.defaultProps = {
-  blurb: "",
-};
+
 export default ListItem;

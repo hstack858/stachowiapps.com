@@ -71,6 +71,12 @@
      padding-bottom: 10rem;
  }
 
+ .list-item-modal {
+     width: 48vw;
+     height: 80vh;
+     margin-top: 3vh;
+ }
+
  .list-item:hover {
      transition-delay: 650ms;
      width: 20.313rem;
@@ -88,12 +94,6 @@
      transition-delay: 650ms;
  }
 
- .card-image {
-     width: 100%;
-     height: 100%;
-     object-fit: cover;
- }
-
  .card-image:hover {
      height: 8.75rem;
  }
@@ -103,6 +103,7 @@
      flex-direction: column;
      padding: 0.313rem;
      margin-left: 0.5rem;
+     visibility: hidden;
  }
 
  .itemInfo .icons {
