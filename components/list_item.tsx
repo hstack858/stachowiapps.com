@@ -1,25 +1,34 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { PlayArrow } from "@material-ui/icons";
+import { Card } from "./constants/slider_data";
 
 interface ListItemProps {
   image: string;
   title: string;
+  role: string;
   blurb: string;
   dateRange: string;
   type: string;
+  setOpen: () => void;
+  setModal: (card: Card) => void;
+  techStack?: string[];
+  blurbBullets?: string[];
 }
 
 // eslint-disable-next-line react/function-component-definition
 const ListItem: React.FC<ListItemProps> = ({
   image,
   title,
+  role,
   blurb,
   dateRange,
   type,
+  setOpen,
+  setModal,
+  techStack,
+  blurbBullets,
 }) => {
-  const [style, setStyle] = useState("list-item group");
-
   const renderBlurb = () => {
     if (blurb !== null) {
       return <div className="desc">{blurb}</div>;
@@ -27,17 +36,23 @@ const ListItem: React.FC<ListItemProps> = ({
     return <div />;
   };
 
-  const openModal = () => {
-    setStyle("list-item-modal");
-  };
-
   return (
     // eslint-disable-next-line jsx-a11y/click-events-have-key-events,jsx-a11y/no-static-element-interactions
     <div
-      className={style}
-      // onClick={() => {
-      //   openModal();
-      // }}
+      className="list-item group"
+      onClick={() => {
+        setModal({
+          image,
+          title,
+          role,
+          blurb,
+          dateRange,
+          type,
+          techStack,
+          blurbBullets,
+        });
+        setOpen();
+      }}
     >
       <div className="image-wrapper">
         <Image

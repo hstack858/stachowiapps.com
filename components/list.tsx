@@ -13,10 +13,13 @@ import convertPixelsToRem from "../utils/pixels_to_rem";
 
 interface ListProps {
   title: string;
+  setOpen: () => void;
+  modalOpen: boolean;
+  setModal: (card: Card) => void;
 }
 
 // eslint-disable-next-line react/function-component-definition
-const List: React.FC<ListProps> = ({ title }) => {
+const List: React.FC<ListProps> = ({ title, setOpen, modalOpen, setModal }) => {
   const [cards, setCards] = useState<Card[]>([]);
   const [slideNum, setSlideNum] = useState(0);
 
@@ -68,10 +71,12 @@ const List: React.FC<ListProps> = ({ title }) => {
       <span className="listTitle">{title}</span>
       {/* WRAPPER */}
       <div className="wrapper">
-        <ArrowBackIosNewOutlinedIcon
-          className="sliderArrow left"
-          onClick={() => handleClick("left")}
-        />
+        {modalOpen ? null : (
+          <ArrowBackIosNewOutlinedIcon
+            className="sliderArrow left"
+            onClick={() => handleClick("left")}
+          />
+        )}
         {/* CONTAINER */}
         {/* @ts-ignore */}
         <div className="cont" ref={listRef}>
@@ -80,17 +85,23 @@ const List: React.FC<ListProps> = ({ title }) => {
             <ListItem
               image={card.image}
               title={card.title}
+              role={card.role ? card.role : ""}
               blurb={card.blurb}
               dateRange={card.dateRange}
               type={card.type}
+              techStack={card.techStack}
+              blurbBullets={card.blurbBullets}
+              setModal={setModal}
+              setOpen={setOpen}
             />
           ))}
         </div>
-
-        <ArrowForwardIosOutlinedIcon
-          className="sliderArrow right"
-          onClick={() => handleClick("right")}
-        />
+        {modalOpen ? null : (
+          <ArrowForwardIosOutlinedIcon
+            className="sliderArrow right"
+            onClick={() => handleClick("right")}
+          />
+        )}
       </div>
     </div>
   );

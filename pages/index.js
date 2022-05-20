@@ -4,9 +4,24 @@ import Featured from "../components/featured";
 import List from "../components/list";
 import ListItemModal from "../components/list_item_modal";
 import { experiences } from "../components/constants/slider_data";
+import { useState } from "react";
+import disableScroll from 'disable-scroll';
 
 export default function Home() {
-  const modal = experiences[0]
+  const [modal, setModal] = useState(experiences[0])
+  const [open, setOpen] = useState(false)
+  const [height, setHeight] = useState(0);
+
+  const openModal = () => {
+    disableScroll.on();
+    setHeight(window.scrollY)
+    setOpen(true)
+  }
+
+  const closeModal = () => {
+    disableScroll.off();
+    setOpen(false);
+  }
 
   return (
     <div className="home">
@@ -20,22 +35,27 @@ export default function Home() {
           <div className="overflow-hidden bg-bgBlack flex flex-col justify-between">
               <Navbar />
               <Featured />
-            {/* <div className="flex justify-center"> */}
-            {/*   <ListItemModal */}
-            {/*     image={modal.image} */}
-            {/*     title={modal.title} */}
-            {/*     blurb={modal.blurb} */}
-            {/*     dateRange={modal.dateRange} */}
-            {/*     type={modal.type} */}
-            {/*     techStack={modal.techStack} */}
-            {/*     blurbBullets={modal.blurbBullets} */}
-            {/*   /> */}
-            {/* </div> */}
+              {!open ? null :
+                <ListItemModal
+                  image={modal.image}
+                  title={modal.title}
+                  role={modal.role}
+                  blurb={modal.blurb}
+                  dateRange={modal.dateRange}
+                  type={modal.type}
+                  techStack={modal.techStack}
+                  blurbBullets={modal.blurbBullets}
+                  open={open}
+                  setClosed={closeModal}
+                  height={height}
+              />
+              }
 
-              <List title="Experiences"/>
-              <List title="Projects"/>
-              <List title="Skills"/>
-              <List title="Awards/Certifications"/>
+
+              <List title="Experiences" setOpen={openModal} modalOpen={open} setModal={setModal}/>
+              <List title="Projects"  setOpen={openModal} modalOpen={open} setModal={setModal}/>
+              <List title="Skills"  setOpen={openModal} modalOpen={open} setModal={setModal}/>
+              <List title="Awards/Certifications"  setOpen={openModal} modalOpen={open} setModal={setModal}/>
               <br /> <br /> <br />
           </div>
       </main>

@@ -34,20 +34,22 @@
      margin-top: 0.625rem;
      display: flex;
      width: max-content;
+     height: 100%;
      transform: translateX(0rem);
      transition: all 1s ease;
  }
 
  .list .wrapper .sliderArrow {
      width: 3rem;
-     height: 100%;
+     height: 80.5%;
      color: white;
      position: absolute;
-     z-index: 99;
+     z-index: 5;
      top: 0;
-     bottom: 0;
+     bottom: 1.94rem;
      margin: auto;
      cursor: pointer;
+     background-color: rgb(22, 22, 22, 0.5);
  }
 
  .list .wrapper .left {
@@ -71,10 +73,70 @@
      padding-bottom: 10rem;
  }
 
- .list-item-modal {
+ .modal-close {
+     width: 4rem;
+     height: 4rem;
+     transform: scale(1.8);
+     padding: 0.2rem;
+     border-radius: 50%;
+     background: black;
+     position: absolute;
+     top: 1.4rem;
+     right: 2rem;
+     cursor: pointer;
+ }
+
+ .shadow {
+     z-index: 10;
+     position: fixed;
+     width: 100%;
+     height: 100vh;
+     background: rgba(0, 0, 0, 0.6);
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     transform: translateY(0);
+ }
+
+ .hideModal {
+     z-index: -1;
+     opacity: 0;
+     animation: hide .25s;
+ } @keyframes hide {
+        from {
+            z-index: 5;
+            transform: scale(1);
+            opacity: 1;
+        } to {
+            z-index: -1;
+            transform: scale(0);
+            opacity: 0;
+                  }
+    }
+
+.showModal {
+    z-index: 5;
+    opacity: 1;
+    animation: show .25s;
+} @keyframes show {
+      from {
+          z-index: -1;
+          transform: scale(0);
+          opacity: 0;
+      } to {
+            z-index: 5;
+            transform: scale(1);
+            opacity: 1;
+        }
+  }
+
+ .main-modal {
      width: 48vw;
      height: 80vh;
      margin-top: 3vh;
+     left: 50%;
+     transform: translateY(0);
+     background-color: #181818;
  }
 
  .list-item:hover {

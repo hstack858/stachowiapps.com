@@ -1,5 +1,5 @@
 export type Card = {
-  company?: string;
+  role?: string;
   location?: string;
   dateRange: string;
   title: string;
@@ -12,10 +12,10 @@ export type Card = {
 
 export const experiences = [
   {
-    company: "Beat The Book Inc.",
+    title: "Beat The Book Inc.",
     location: "Boston, MA",
     dateRange: "5/21 - Present",
-    title: "Frontend Lead",
+    role: "Frontend Lead",
     techStack: ["React", "TypeScript", "Next.js", "AWS", "Docker"],
     blurb: "Web hosted software that facilitates virtual betting games. ",
     image: "https://netflix-site.s3.amazonaws.com/static/btb.jpg",
@@ -27,10 +27,10 @@ export const experiences = [
     ],
   },
   {
-    company: "MyCase",
+    title: "MyCase",
     location: "San Diego, CA",
     dateRange: "5/21 - 1/22",
-    title: "SE Co-op",
+    role: "SE Co-op",
     techStack: ["Ruby On Rails", "React", "TypeScript", "MobX", "MySQL"],
     blurb: "MyCase is a SAAS case management platform designed for lawyers",
     image: "https://netflix-site.s3.amazonaws.com/static/mycase.png",
@@ -43,10 +43,10 @@ export const experiences = [
     ],
   },
   {
-    company: "PayPal",
+    title: "PayPal",
     location: "San Jose, CA",
     dateRange: "6/22 - 9/22",
-    title: "SE Intern",
+    role: "SE Intern",
     techStack: ["Java"],
     blurb:
       "PayPal is an online payment system that makes paying for things online and sending and receiving money safe and secure.",
@@ -55,10 +55,10 @@ export const experiences = [
     blurbBullets: ["Member of a payment transaction team"],
   },
   {
-    company: "Generate",
+    title: "Generate",
     location: "Boston, MA",
     dateRange: "8/21 - 12/21",
-    title: "Software Engineer",
+    role: "Software Engineer",
     techStack: ["React.js", "MongoDB", "GraphQL"],
     blurb:
       "Student-led project teams in the build studio collaborate to bring a real world client's vision to life.",
