@@ -72,7 +72,7 @@ const ListItemModal: React.FC<ListItemModalProps> = ({
         className="main-modal flex flex-col"
         onClick={(event) => event.stopPropagation()}
       >
-        <div className="list-item-modal-image-wrapper h-1/2">
+        <div className="list-item-modal-image-wrapper">
           <Image
             src={image}
             alt=""
