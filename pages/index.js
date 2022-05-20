@@ -10,16 +10,18 @@ import disableScroll from 'disable-scroll';
 export default function Home() {
   const [modal, setModal] = useState(experiences[0])
   const [open, setOpen] = useState(false)
-  const [height, setHeight] = useState(0);
 
   const openModal = () => {
-    disableScroll.on();
-    setHeight(window.scrollY)
+    if (window.scrollY > 767) {
+      disableScroll.on();
+    }
     setOpen(true)
   }
 
   const closeModal = () => {
-    disableScroll.off();
+    if (window.scrollY > 767) {
+      disableScroll.off();
+    }
     setOpen(false);
   }
 
@@ -52,7 +54,6 @@ export default function Home() {
                   blurbBullets={modal.blurbBullets}
                   open={open}
                   setClosed={closeModal}
-                  height={height}
               />
               }
 

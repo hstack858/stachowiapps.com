@@ -5,7 +5,6 @@ import CloseIcon from "@mui/icons-material/Close";
 interface ListItemModalProps {
   open: boolean;
   setClosed: () => void;
-  height: number;
   image: string;
   title: string;
   // eslint-disable-next-line react/require-default-props
@@ -23,7 +22,6 @@ interface ListItemModalProps {
 const ListItemModal: React.FC<ListItemModalProps> = ({
   open,
   setClosed,
-  height,
   image,
   title,
   role,
@@ -62,10 +60,7 @@ const ListItemModal: React.FC<ListItemModalProps> = ({
     // eslint-disable-next-line jsx-a11y/click-events-have-key-events,jsx-a11y/no-static-element-interactions
     <div className={getModalClass()} onClick={setClosed}>
       {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events,jsx-a11y/no-static-element-interactions */}
-      <div
-        className="main-modal flex flex-col"
-        onClick={(event) => event.stopPropagation()}
-      >
+      <div className="main-modal" onClick={(event) => event.stopPropagation()}>
         <div className="list-item-modal-image-wrapper">
           <Image
             src={image}
@@ -76,7 +71,7 @@ const ListItemModal: React.FC<ListItemModalProps> = ({
           />
           <CloseIcon className="modal-close" onClick={setClosed} />
         </div>
-        <div className="modal-info flex text-white mx-8 mb-10 mt-2">
+        <div className="modal-info">
           <div className="mr-8">
             <div className="top-modal-info flex justify-start">
               <span>{role} </span>
@@ -84,15 +79,15 @@ const ListItemModal: React.FC<ListItemModalProps> = ({
               <span className="ml-8"> {type}</span>
             </div>
             <div className="modal-title mt-10 font-bold text-2xl">{title}</div>
-            <div className="flex mt-10">
-              <div className="w-3/4 flex flex-col">
+            <div className="modal-text-info flex mt-10">
+              <div className="modal-desc">
                 <div>{blurb}</div>
                 <div className="ml-8">
                   <ul className="list-disc">{renderBlurbBullets()}</ul>
                 </div>
               </div>
               {techStack === undefined ? null : (
-                <div className="w-1/4 flex flex-col items-center">
+                <div className="tech-stack">
                   <div>Tech Stack:</div>
                   <ul className="list-disc ml-8">{renderTechStack()}</ul>
                 </div>
