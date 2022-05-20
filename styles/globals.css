@@ -73,7 +73,6 @@
      transition: all 200ms;
      transition-property: width, height, top, visibility, box-shadow, -webkit-box-shadow, padding-bottom, margin-bottom;
      list-style: none;
-     padding-bottom: 10rem;
  }
 
 .list-item:hover .itemInfo {
@@ -206,7 +205,7 @@
      -webkit-box-shadow: 0 0 .938rem 0 rgba(255,255,255,0.1);
      box-shadow: 0 0 .938rem 0 rgba(255,255,255,0.1);
      position: relative;
-     top: -6rem;
+     top: -5rem;
      margin-bottom: -9rem;
      padding-bottom: 0;
  }

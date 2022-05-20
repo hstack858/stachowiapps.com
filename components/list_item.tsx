@@ -61,7 +61,7 @@ const ListItem: React.FC<ListItemProps> = ({
           src={image}
           alt=""
           className="card-image"
-          width={670}
+          width={750}
           height={400}
           layout="responsive"
         />
