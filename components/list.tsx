@@ -39,6 +39,32 @@ const List: React.FC<ListProps> = ({ title, setOpen, modalOpen, setModal }) => {
     }
   }, [cards, title]);
 
+  const getCardNumPerRow = () => {
+    const screenWidth = window.innerWidth;
+    if (screenWidth > 1819) {
+      return 8;
+    }
+    if (screenWidth > 1590) {
+      return 7;
+    }
+    if (screenWidth > 1361) {
+      return 6;
+    }
+    if (screenWidth > 1130) {
+      return 5;
+    }
+    if (screenWidth > 895) {
+      return 4;
+    }
+    if (screenWidth > 668) {
+      return 3;
+    }
+    if (screenWidth > 439) {
+      return 2;
+    }
+    return 1;
+  };
+
   const listRef = useRef();
 
   const handleClick = (direction: string) => {
@@ -53,12 +79,17 @@ const List: React.FC<ListProps> = ({ title, setOpen, modalOpen, setModal }) => {
       setSlideNum(slideNum - 1);
       // @ts-ignore
       listRef.current.style.transform = `translateX(${14.375 + distance}rem)`;
+    } else {
+      const cardsPerRow = getCardNumPerRow();
+      if (direction === "right" && slideNum < cards.length - cardsPerRow) {
+        setSlideNum(slideNum + 1);
+        // @ts-ignore
+        listRef.current.style.transform = `translateX(${
+          -14.375 + distance
+        }rem)`;
+      }
     }
-    if (direction === "right" && slideNum < cards.length - 6) {
-      setSlideNum(slideNum + 1);
-      // @ts-ignore
-      listRef.current.style.transform = `translateX(${-14.375 + distance}rem)`;
-    }
+
     setTimeout(() => {
       setArrowDisabled(false);
     }, 500);

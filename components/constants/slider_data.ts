@@ -76,7 +76,7 @@ export const projects = [
   {
     title: "Lax Dolphins",
     dateRange: "9/21",
-    techStack: ["React", "TypeScript", "JavaScript"],
+    techStack: ["React", "TypeScript"],
     blurb:
       "My roommate, good friend, and I created an NFT Series called Lax Dolphin Lagoon. It has a smart contract on the Ethereum blockchain.",
     image: "https://netflix-site.s3.amazonaws.com/static/castle-image.jpg",

@@ -77,12 +77,12 @@ const ListItemModal: React.FC<ListItemModalProps> = ({
             src={image}
             alt=""
             width={670}
-            height={400}
+            height={320}
             layout="responsive"
           />
           <CloseIcon className="modal-close" onClick={setClosed} />
         </div>
-        <div className="modal-info flex text-white mx-8">
+        <div className="modal-info flex text-white mx-8 mb-10 mt-2">
           <div className="mr-8">
             <div className="top-modal-info flex justify-start">
               <span>{role} </span>
