@@ -76,9 +76,9 @@ const ListItemModal: React.FC<ListItemModalProps> = ({
           <Image
             src={image}
             alt=""
-            width={820}
-            height={350}
-            objectFit="cover"
+            width={670}
+            height={400}
+            layout="responsive"
           />
           <CloseIcon className="modal-close" onClick={setClosed} />
         </div>

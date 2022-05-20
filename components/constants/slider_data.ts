@@ -246,6 +246,14 @@ export const skills = [
       "An open-source data query and manipulation language for APIs, and a runtime for fulfilling queries with existing data.",
   },
   {
+    title: "Next.js",
+    image: "https://netflix-site.s3.amazonaws.com/static/nextjs.png",
+    type: "Frontend",
+    dateRange: "1/22",
+    blurb:
+      "An open-source web development framework built on top of Node.js enabling React based web applications functionalities such as server-side rendering and generating static websites.",
+  },
+  {
     title: "Redux",
     image: "https://netflix-site.s3.amazonaws.com/static/redux.png",
     type: "Frontend",
@@ -255,7 +263,7 @@ export const skills = [
   },
   {
     title: "MobX",
-    image: "https://netflix-site.s3.amazonaws.com/static/mobx.png",
+    image: "https://netflix-site.s3.amazonaws.com/static/new_mob.webp",
     type: "Frontend",
     dateRange: "5/21",
     blurb:
@@ -272,19 +280,12 @@ export const skills = [
   },
   {
     title: "Git",
-    image: "https://netflix-site.s3.amazonaws.com/static/git.png",
+    image:
+      "https://netflix-site.s3.amazonaws.com/static/git_and_github_logo.png",
     type: "FullStack",
     dateRange: "2/20",
     blurb:
       "A software for tracking changes in any set of files, usually used for coordinating work among programmers collaboratively developing source code during software development.",
-  },
-  {
-    title: "Next.js",
-    image: "https://netflix-site.s3.amazonaws.com/static/nextjs.png",
-    type: "Frontend",
-    dateRange: "1/22",
-    blurb:
-      "An open-source web development framework built on top of Node.js enabling React based web applications functionalities such as server-side rendering and generating static websites.",
   },
   {
     title: "Bootstrap",
