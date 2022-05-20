@@ -56,7 +56,7 @@ const ListItem: React.FC<ListItemProps> = ({
         setOpen();
       }}
     >
-      <div className="image-wrapper">
+      <div className="image-wrapper z-0">
         <Image
           src={image}
           alt=""
