@@ -10,7 +10,7 @@ interface FeaturedProps {
 // eslint-disable-next-line react/function-component-definition
 const Featured: React.FC<FeaturedProps> = ({ openModal }) => (
   <div className="featured">
-    <div className="desktop-featured flex flex-col w-1/3 absolute left-20 bottom-20 text-white">
+    <div className="desktop-featured">
       <Image
         src={SocialNetworkTitle}
         alt=""
@@ -23,7 +23,7 @@ const Featured: React.FC<FeaturedProps> = ({ openModal }) => (
         with his genius roommate and faces the reality venture capital sharks.
         What will happen to the shares he earned as the frontend lead?
       </span>
-      <div className="flex">
+      <div className="buttons flex">
         <button
           type="button"
           className="bg-white text-bgBlack flex py-3 px-6 rounded-lg border-r-1 items-center justify-center text-xl font-medium mr-2 cursor-pointer"

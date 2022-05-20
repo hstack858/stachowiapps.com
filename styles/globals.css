@@ -17,6 +17,9 @@
  @media (min-width: 767px) {
      .base {
          justify-content: space-between;
+         overflow: hidden;
+         display: flex;
+         flex-direction: column;
      }
 
      .featured {
@@ -149,7 +152,7 @@
          margin-right: 0.313rem;
          overflow: hidden;
          cursor: pointer;
-         background-color: #0b0b0b;
+         background-color: #FFFFFF;
          top: 0;
          z-index: 1;
          transition: all 200ms;
@@ -214,6 +217,15 @@
          flex-direction: column;
          align-items: center;
      }
+
+     .desktop-featured {
+         display: flex;
+         flex-direction: column;
+         width: 33%;
+         position: absolute;
+         left: 5rem;
+         color: white;
+     }
  }
 
  .hideModal {
@@ -252,7 +264,6 @@
  
  @media (max-width: 767px) {
      .base {
-         justify-content: start;
      }
 
      .navbar {
@@ -260,25 +271,28 @@
      }
 
      .featured {
-         height: 25vh;
-         background-image: url("https://netflix-site.s3.amazonaws.com/static/mobile-header.png");
+         height: 35vh;
+         background-image: url("https://netflix-site.s3.amazonaws.com/static/social_network.webp");
          background-repeat: no-repeat;
          background-size: cover;
          position: relative;
          margin-bottom: 1vh;
      }
 
-     .desktop-featured {
-         visibility: hidden;
-     }
 
      .mobile-featured {
          visibility: visible;
      }
 
+     .buttons {
+         display: none;
+     }
+
+
+
      .list {
          width: 100%;
-         margin-bottom: 0;
+         margin-bottom: 3rem;
      }
 
      .list .listTitle {
@@ -300,14 +314,14 @@
          width: 35vw;
          list-style: none;
          margin-right: .2rem;
-         background-color: #0b0b0b;
+         background-color: #FFFFFF;
          top: 0;
          z-index: 1;
      }
 
 
      .list .wrapper .sliderArrow {
-         visibility: hidden;
+         display: none;
      }
 
      .itemInfo {
@@ -322,7 +336,7 @@
          background-color: #181818;
          overflow: scroll;
      }
-     
+
 
      .modal-close {
          width: 4rem;
@@ -371,6 +385,14 @@
          flex-direction: column;
          align-items: start;
          margin-top: 4rem;
+     }
+
+     .desktop-featured {
+         display: flex;
+         flex-direction: column;
+         width: 100%;
+         transform: scale(0.6);
+         color: white;
      }
  }
 

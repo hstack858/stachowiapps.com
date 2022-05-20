@@ -39,7 +39,7 @@ export default function Home() {
       </Head>
 
       <main>
-          <div className="base overflow-hidden bg-bgBlack flex flex-col">
+          <div className="base overflow-hidden bg-bgBlack">
               <Navbar />
               <Featured  openModal={openFeaturedModal}/>
               {!open ? null :
