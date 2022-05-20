@@ -23,6 +23,11 @@ export default function Home() {
     setOpen(false);
   }
 
+  const openFeaturedModal = () => {
+    setModal(experiences[0]);
+    openModal();
+  }
+
   return (
     <div className="home">
       <Head>
@@ -34,7 +39,7 @@ export default function Home() {
       <main>
           <div className="overflow-hidden bg-bgBlack flex flex-col justify-between">
               <Navbar />
-              <Featured />
+              <Featured  openModal={openFeaturedModal}/>
               {!open ? null :
                 <ListItemModal
                   image={modal.image}
@@ -50,7 +55,6 @@ export default function Home() {
                   height={height}
               />
               }
-
 
               <List title="Experiences" setOpen={openModal} modalOpen={open} setModal={setModal}/>
               <List title="Projects"  setOpen={openModal} modalOpen={open} setModal={setModal}/>

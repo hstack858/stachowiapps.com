@@ -4,8 +4,12 @@ import { InfoOutlined, PlayArrow } from "@material-ui/icons";
 import SocialNetwork from "../public/static/social_network.webp";
 import SocialNetworkTitle from "../public/static/social_network_title.png";
 
+interface FeaturedProps {
+  openModal: () => void;
+}
+
 // eslint-disable-next-line react/function-component-definition
-const Featured: React.FC = () => (
+const Featured: React.FC<FeaturedProps> = ({ openModal }) => (
   <div className="featured">
     <Image
       src={SocialNetwork}
@@ -34,6 +38,7 @@ const Featured: React.FC = () => (
         <button
           type="button"
           className="bg-white text-bgBlack flex py-3 px-6 rounded-lg border-r-1 items-center justify-center text-xl font-medium mr-2 cursor-pointer"
+          onClick={openModal}
         >
           <PlayArrow />
           <span className="ml-1">Play</span>
@@ -41,6 +46,7 @@ const Featured: React.FC = () => (
         <button
           type="button"
           className="bg-gray-600 text-white flex py-3 px-6 rounded-lg border-r-1 items-center justify-center text-xl font-medium mr-2 cursor-pointer"
+          onClick={openModal}
         >
           <InfoOutlined />
           <span className="ml-1">Info</span>
