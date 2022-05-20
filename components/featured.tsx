@@ -10,7 +10,7 @@ interface FeaturedProps {
 // eslint-disable-next-line react/function-component-definition
 const Featured: React.FC<FeaturedProps> = ({ openModal }) => (
   <div className="featured">
-    <div className="flex flex-col w-1/3 absolute left-20 bottom-20 text-white">
+    <div className="desktop-featured flex flex-col w-1/3 absolute left-20 bottom-20 text-white">
       <Image
         src={SocialNetworkTitle}
         alt=""

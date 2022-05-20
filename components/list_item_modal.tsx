@@ -60,13 +60,7 @@ const ListItemModal: React.FC<ListItemModalProps> = ({
 
   return (
     // eslint-disable-next-line jsx-a11y/click-events-have-key-events,jsx-a11y/no-static-element-interactions
-    <div
-      className={getModalClass()}
-      style={{
-        transform: `translateY(${height})`,
-      }}
-      onClick={setClosed}
-    >
+    <div className={getModalClass()} onClick={setClosed}>
       {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events,jsx-a11y/no-static-element-interactions */}
       <div
         className="main-modal flex flex-col"

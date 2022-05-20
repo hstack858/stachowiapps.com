@@ -37,7 +37,7 @@ export default function Home() {
       </Head>
 
       <main>
-          <div className="overflow-hidden bg-bgBlack flex flex-col justify-between">
+          <div className="base overflow-hidden bg-bgBlack flex flex-col">
               <Navbar />
               <Featured  openModal={openFeaturedModal}/>
               {!open ? null :
@@ -60,7 +60,8 @@ export default function Home() {
               <List title="Projects"  setOpen={openModal} modalOpen={open} setModal={setModal}/>
               <List title="Skills"  setOpen={openModal} modalOpen={open} setModal={setModal}/>
               <List title="Awards/Certifications"  setOpen={openModal} modalOpen={open} setModal={setModal}/>
-              <br /> <br /> <br />
+
+            <br /> <br /> <br />
           </div>
       </main>
     </div>

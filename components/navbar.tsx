@@ -15,9 +15,9 @@ const Navbar: React.FC = () => {
 
   const getNavbarClass = () => {
     if (isScrolled) {
-      return "fixed bg-bgBlack text-white w-full z-50";
+      return "navbar fixed bg-bgBlack text-white w-full z-50";
     }
-    return "fixed bg-gradient-to-t from-transparent to-bgBlack text-white w-full z-50";
+    return "navbar fixed bg-gradient-to-t from-transparent to-bgBlack text-white w-full z-50";
   };
 
   const scrollToId = (id: string) => {
