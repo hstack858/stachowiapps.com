@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Image from "next/image";
 import { PlayArrow } from "@material-ui/icons";
 import { Card } from "./constants/slider_data";
@@ -12,7 +12,9 @@ interface ListItemProps {
   type: string;
   setOpen: () => void;
   setModal: (card: Card) => void;
+  // eslint-disable-next-line react/require-default-props
   techStack?: string[];
+  // eslint-disable-next-line react/require-default-props
   blurbBullets?: string[];
 }
 
@@ -68,7 +70,7 @@ const ListItem: React.FC<ListItemProps> = ({
         <div className="icons">
           <PlayArrow className="icon" />
           <span className="itemInfoTop">
-            <span>{title} </span>
+            <span>{role || title} </span>
             <span className="date">{dateRange}</span>
             <span> {type}</span>
           </span>

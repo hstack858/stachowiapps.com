@@ -22,6 +22,7 @@ interface ListProps {
 const List: React.FC<ListProps> = ({ title, setOpen, modalOpen, setModal }) => {
   const [cards, setCards] = useState<Card[]>([]);
   const [slideNum, setSlideNum] = useState(0);
+  const [arrowDisabled, setArrowDisabled] = useState(false);
 
   useEffect(() => {
     if (title === "Experiences") {
@@ -41,6 +42,7 @@ const List: React.FC<ListProps> = ({ title, setOpen, modalOpen, setModal }) => {
   const listRef = useRef();
 
   const handleClick = (direction: string) => {
+    setArrowDisabled(true);
     let rect = 0;
     if (listRef !== undefined) {
       // @ts-ignore
@@ -52,11 +54,14 @@ const List: React.FC<ListProps> = ({ title, setOpen, modalOpen, setModal }) => {
       // @ts-ignore
       listRef.current.style.transform = `translateX(${14.375 + distance}rem)`;
     }
-    if (direction === "right" && slideNum < cards.length - 5) {
+    if (direction === "right" && slideNum < cards.length - 6) {
       setSlideNum(slideNum + 1);
       // @ts-ignore
       listRef.current.style.transform = `translateX(${-14.375 + distance}rem)`;
     }
+    setTimeout(() => {
+      setArrowDisabled(false);
+    }, 500);
   };
 
   const getId = () => {
@@ -74,7 +79,11 @@ const List: React.FC<ListProps> = ({ title, setOpen, modalOpen, setModal }) => {
         {modalOpen ? null : (
           <ArrowBackIosNewOutlinedIcon
             className="sliderArrow left"
-            onClick={() => handleClick("left")}
+            onClick={() => {
+              if (!arrowDisabled) {
+                handleClick("left");
+              }
+            }}
           />
         )}
         {/* CONTAINER */}
@@ -99,7 +108,11 @@ const List: React.FC<ListProps> = ({ title, setOpen, modalOpen, setModal }) => {
         {modalOpen ? null : (
           <ArrowForwardIosOutlinedIcon
             className="sliderArrow right"
-            onClick={() => handleClick("right")}
+            onClick={() => {
+              if (!arrowDisabled) {
+                handleClick("right");
+              }
+            }}
           />
         )}
       </div>

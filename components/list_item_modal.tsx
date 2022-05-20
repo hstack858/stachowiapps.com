@@ -8,14 +8,18 @@ interface ListItemModalProps {
   height: number;
   image: string;
   title: string;
+  // eslint-disable-next-line react/require-default-props
   role?: string;
   blurb: string;
   dateRange: string;
   type: string;
+  // eslint-disable-next-line react/require-default-props
   techStack?: string[];
+  // eslint-disable-next-line react/require-default-props
   blurbBullets?: string[];
 }
 
+// eslint-disable-next-line react/function-component-definition
 const ListItemModal: React.FC<ListItemModalProps> = ({
   open,
   setClosed,
@@ -31,6 +35,7 @@ const ListItemModal: React.FC<ListItemModalProps> = ({
 }) => {
   const renderBlurbBullets = () => {
     if (blurbBullets !== undefined) {
+      // eslint-disable-next-line react/jsx-key
       return blurbBullets.map((bullet: string) => <li>{bullet}</li>);
     }
     return null;
@@ -39,6 +44,7 @@ const ListItemModal: React.FC<ListItemModalProps> = ({
   const renderTechStack = () => {
     if (techStack !== undefined) {
       return techStack.map((bullet: string) => (
+        // eslint-disable-next-line react/jsx-key
         <li className="ml-8">{bullet}</li>
       ));
     }
@@ -53,6 +59,7 @@ const ListItemModal: React.FC<ListItemModalProps> = ({
   };
 
   return (
+    // eslint-disable-next-line jsx-a11y/click-events-have-key-events,jsx-a11y/no-static-element-interactions
     <div
       className={getModalClass()}
       style={{
@@ -60,6 +67,7 @@ const ListItemModal: React.FC<ListItemModalProps> = ({
       }}
       onClick={setClosed}
     >
+      {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events,jsx-a11y/no-static-element-interactions */}
       <div
         className="main-modal flex flex-col"
         onClick={(event) => event.stopPropagation()}
@@ -89,11 +97,12 @@ const ListItemModal: React.FC<ListItemModalProps> = ({
                   <ul className="list-disc">{renderBlurbBullets()}</ul>
                 </div>
               </div>
-
-              <div className="w-1/4 flex flex-col items-center">
-                <div>Tech Stack:</div>
-                <ul className="list-disc ml-8">{renderTechStack()}</ul>
-              </div>
+              {techStack === undefined ? null : (
+                <div className="w-1/4 flex flex-col items-center">
+                  <div>Tech Stack:</div>
+                  <ul className="list-disc ml-8">{renderTechStack()}</ul>
+                </div>
+              )}
             </div>
           </div>
         </div>

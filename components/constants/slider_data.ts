@@ -43,18 +43,6 @@ export const experiences = [
     ],
   },
   {
-    title: "PayPal",
-    location: "San Jose, CA",
-    dateRange: "6/22 - 9/22",
-    role: "SE Intern",
-    techStack: ["Java"],
-    blurb:
-      "PayPal is an online payment system that makes paying for things online and sending and receiving money safe and secure.",
-    image: "https://netflix-site.s3.amazonaws.com/static/paypal.png",
-    type: "Backend",
-    blurbBullets: ["Member of a payment transaction team"],
-  },
-  {
     title: "Generate",
     location: "Boston, MA",
     dateRange: "8/21 - 12/21",
@@ -69,6 +57,18 @@ export const experiences = [
       "Writing API connections from our database to the frontend",
       "Coding visual and interactive game scenarios on the frontend",
     ],
+  },
+  {
+    title: "PayPal",
+    location: "San Jose, CA",
+    dateRange: "6/22 - 9/22",
+    role: "SE Intern",
+    techStack: ["Java"],
+    blurb:
+      "PayPal is an online payment system that makes paying for things online and sending and receiving money safe and secure.",
+    image: "https://netflix-site.s3.amazonaws.com/static/paypal.png",
+    type: "Backend",
+    blurbBullets: ["Member of a payment transaction team"],
   },
 ];
 
@@ -114,7 +114,7 @@ export const projects = [
     ],
   },
   {
-    title: "A Bad Day To Be A Hero",
+    title: "Bad Day",
     dateRange: "11/20",
     techStack: ["C#", "Unity"],
     blurb:

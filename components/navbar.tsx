@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Search } from "@material-ui/icons";
 import Image from "next/image";
 import Henflix from "../public/static/henflix.png";
 
