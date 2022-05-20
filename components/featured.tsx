@@ -1,7 +1,6 @@
 import React from "react";
 import Image from "next/image";
 import { InfoOutlined, PlayArrow } from "@material-ui/icons";
-import SocialNetwork from "../public/static/social_network.webp";
 import SocialNetworkTitle from "../public/static/social_network_title.png";
 
 interface FeaturedProps {
@@ -21,10 +20,8 @@ const Featured: React.FC<FeaturedProps> = ({ openModal }) => (
       />
       <span className="my-4 text-lg">
         A college junior named Henry Stachowiak starts a sports betting site
-        with his genius roommate and faces the reality of greedy CEOs and
-        investors. What will happen to the currently worthless shares he was
-        given in exchange for almost a year of building the frontend basically
-        alone?
+        with his genius roommate and faces the reality venture capital sharks.
+        What will happen to the shares he earned as the frontend lead?
       </span>
       <div className="flex">
         <button
