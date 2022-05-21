@@ -164,6 +164,11 @@
          list-style: none;
      }
 
+     .list-item-modal-image-wrapper {
+         position: relative;
+         background-color: #FFFFFF;
+     }
+
      .modal-close {
          width: 4rem;
          height: 4rem;
@@ -435,11 +440,13 @@
          position: relative;
          bottom: 2rem;
      }
+
+     .list-item-modal-image-wrapper {
+         background-color: #FFFFFF;
+     }
  }
 
-.list-item-modal-image-wrapper {
-    background-color: #FFFFFF;
-}
+
 
 
 
