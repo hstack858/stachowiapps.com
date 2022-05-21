@@ -12,14 +12,14 @@ export default function Home() {
   const [open, setOpen] = useState(false)
 
   const openModal = () => {
-    if (window.scrollY > 767) {
+    if (window.innerWidth > 470) {
       disableScroll.on();
     }
     setOpen(true)
   }
 
   const closeModal = () => {
-    if (window.scrollY > 767) {
+    if (window.innerWidth > 470) {
       disableScroll.off();
     }
     setOpen(false);

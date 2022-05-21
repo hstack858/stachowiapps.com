@@ -62,12 +62,19 @@ const List: React.FC<ListProps> = ({ title, setOpen, modalOpen, setModal }) => {
     if (screenWidth > 439) {
       return 2;
     }
-    return 1;
+    return 2;
   };
 
   const listRef = useRef();
 
   const handleClick = (direction: string) => {
+    let adder = 0;
+    if (window.innerWidth > 470) {
+      adder = 14.375;
+    } else {
+      adder = 9.59;
+    }
+
     setArrowDisabled(true);
     let rect = 0;
     if (listRef !== undefined) {
@@ -78,22 +85,21 @@ const List: React.FC<ListProps> = ({ title, setOpen, modalOpen, setModal }) => {
     if (direction === "left" && slideNum > 0) {
       setSlideNum(slideNum - 1);
       // @ts-ignore
-      listRef.current.style.transform = `translateX(${14.375 + distance}rem)`;
+      listRef.current.style.transform = `translateX(${adder + distance}rem)`;
     } else {
       const cardsPerRow = getCardNumPerRow();
+      console.log(cards.length, cardsPerRow, slideNum);
       if (direction === "right" && slideNum < cards.length - cardsPerRow) {
         setSlideNum(slideNum + 1);
         // @ts-ignore
-        listRef.current.style.transform = `translateX(${
-          -14.375 + distance
-        }rem)`;
+        listRef.current.style.transform = `translateX(${-adder + distance}rem)`;
       }
     }
-
-    setTimeout(() => {
-      setArrowDisabled(false);
-    }, 500);
   };
+
+  setTimeout(() => {
+    setArrowDisabled(false);
+  }, 500);
 
   const getId = () => {
     if (title === "Awards/Certifications") {
