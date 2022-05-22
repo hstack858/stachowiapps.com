@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import Image from "next/image";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import ArticleIcon from "@mui/icons-material/Article";
 import Henflix from "../public/static/henflix.png";
 
 // eslint-disable-next-line react/function-component-definition
@@ -68,6 +71,33 @@ const Navbar: React.FC = () => {
           <span className="cursor-pointer mr-4">
             <button type="button" onClick={() => scrollToId("Awards")}>
               Awards/Certifications
+            </button>
+          </span>
+        </div>
+        <div className="flex justify-center">
+          <span className="cursor-pointer mr-4">
+            <GitHubIcon className="mr-2" />
+            <button type="button">
+              <a href="https://github.com/hstack858">GitHub</a>
+            </button>
+          </span>
+          <span className="cursor-pointer mr-4">
+            <LinkedInIcon className="mr-2" />
+            <button type="button">
+              <a href="https://www.linkedin.com/in/henry-stachowiak/">
+                LinkedIn
+              </a>
+            </button>
+          </span>
+          <span className="cursor-pointer mr-4">
+            <ArticleIcon className="mr-2" />
+            <button type="button">
+              <a
+                href="https://netflix-site.s3.amazonaws.com/static/HenryStachowiakResume.jpg"
+                download
+              >
+                Resume
+              </a>
             </button>
           </span>
         </div>
