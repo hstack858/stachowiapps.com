@@ -4,6 +4,7 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import ArticleIcon from "@mui/icons-material/Article";
 import Henflix from "../public/static/henflix.png";
+import styles from "./navbar.module.css";
 
 // eslint-disable-next-line react/function-component-definition
 const Navbar: React.FC = () => {
@@ -18,9 +19,9 @@ const Navbar: React.FC = () => {
 
   const getNavbarClass = () => {
     if (isScrolled) {
-      return "navbar fixed bg-bgBlack text-white w-full z-50";
+      return `${styles.navbar} fixed bg-bgBlack text-white w-full z-50`;
     }
-    return "navbar fixed bg-gradient-to-t from-transparent to-bgBlack text-white w-full z-50";
+    return `${styles.navbar} fixed bg-gradient-to-t from-transparent to-bgBlack text-white w-full z-50`;
   };
 
   const scrollToId = (id: string) => {

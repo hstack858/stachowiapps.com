@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import { InfoOutlined, PlayArrow } from "@material-ui/icons";
 import SocialNetworkTitle from "../public/static/social_network_title.png";
+import styles from "./featured.module.css";
 
 interface FeaturedProps {
   openModal: () => void;
@@ -9,8 +10,8 @@ interface FeaturedProps {
 
 // eslint-disable-next-line react/function-component-definition
 const Featured: React.FC<FeaturedProps> = ({ openModal }) => (
-  <div className="featured">
-    <div className="desktop-featured">
+  <div className={styles.featured}>
+    <div className={styles.desktopFeatured}>
       <Image
         src={SocialNetworkTitle}
         alt=""
@@ -23,7 +24,7 @@ const Featured: React.FC<FeaturedProps> = ({ openModal }) => (
         with his genius roommate and faces the reality venture capital sharks.
         What will happen to the shares he earned as the frontend lead?
       </span>
-      <div className="buttons flex">
+      <div className={styles.buttons}>
         <button
           type="button"
           className="bg-white text-bgBlack flex py-3 px-6 rounded-lg border-r-1 items-center justify-center text-xl font-medium mr-2 cursor-pointer"

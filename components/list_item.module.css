@@ -1,0 +1,105 @@
+@media (min-width: 470px) {
+    .imageWrapper {
+        background-color: #FFFFFF;
+        z-index: 0;
+    }
+
+    .listItem:hover {
+        transition-delay: 650ms;
+        width: 20.313rem;
+        height: 18.75rem;
+        -webkit-box-shadow: 0 0 .938rem 0 rgba(255,255,255,0.1);
+        box-shadow: 0 0 .938rem 0 rgba(255,255,255,0.1);
+        position: relative;
+        top: -5rem;
+        margin-bottom: -12rem;
+        padding-bottom: 0;
+        z-index: 4;
+    }
+
+    .listItem:hover .itemInfo {
+        visibility: visible;
+        transition-delay: 650ms;
+    }
+
+    .itemInfo {
+        display: flex;
+        flex-direction: column;
+        padding: 0.313rem;
+        margin-left: 0.5rem;
+        visibility: hidden;
+    }
+
+    .itemInfo .icons {
+        display: flex;
+        margin-bottom: 0.625rem;
+        align-items: center;
+        justify-content: start;
+    }
+
+    .itemInfo .icons .icon {
+        width: 2rem;
+        height: 2rem;
+        border: 0.125rem solid white;
+        padding: 0.313rem;
+        border-radius: 50%;
+        margin-right: 0.5rem;
+        font-size: 1rem;
+        color: white;
+    }
+
+    .itemInfoTop {
+        display: flex;
+        align-items: center;
+        margin-bottom: 0.625rem;
+        margin-left: 1rem;
+        margin-top: 0.5rem;
+        font-size: 0.875rem;
+        font-weight: 600;
+        color: gray;
+        justify-content: space-between;
+    }
+
+    .date {
+        padding: 0.063rem 0.188rem;
+        margin: 0 0.5rem;
+    }
+
+    .desc {
+        margin-bottom: 0.625rem;
+        font-size: 0.813rem;
+    }
+
+    .listItem {
+        width: 14.063rem;
+        height: 7.5rem;
+        margin-right: 0.313rem;
+        overflow: hidden;
+        cursor: pointer;
+        background-color: #0b0b0b;
+        top: 0;
+        z-index: 1;
+        transition: all 200ms;
+        transition-property: width, height, top, visibility, box-shadow, -webkit-box-shadow, padding-bottom, margin-bottom, z-index;
+        list-style: none;
+    }
+}
+
+@media (max-width: 470px) {
+    .listItem {
+        width: 35vw;
+        list-style: none;
+        margin-right: .2rem;
+        background-color: #FFFFFF;
+        top: 0;
+        z-index: 1;
+    }
+
+    .itemInfo {
+        display: none;
+    }
+}
+
+.imageWrapper {
+    z-index: 0;
+}

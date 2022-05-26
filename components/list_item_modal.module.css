@@ -1,0 +1,165 @@
+.hideModal {
+    z-index: -1;
+    opacity: 0;
+    animation: hide .25s;
+} @keyframes hide {
+      from {
+          z-index: 5;
+          transform: scale(1);
+          opacity: 1;
+      } to {
+            z-index: -1;
+            transform: scale(0);
+            opacity: 0;
+        }
+  }
+
+.showModal {
+    z-index: 5;
+    opacity: 1;
+    animation: show .25s;
+} @keyframes show {
+      from {
+          z-index: -1;
+          transform: scale(0);
+          opacity: 0;
+      } to {
+            z-index: 5;
+            transform: scale(1);
+            opacity: 1;
+        }
+  }
+
+  @media (min-width: 470px) {
+      .listItemModalImageWrapper {
+          position: relative;
+          background-color: #FFFFFF;
+      }
+
+      .modalClose {
+          width: 4rem;
+          height: 4rem;
+          transform: scale(1.8);
+          padding: 0.2rem;
+          border-radius: 50%;
+          background: black;
+          position: absolute;
+          top: 1.4rem;
+          right: 2rem;
+          cursor: pointer;
+      }
+
+      .shadow {
+          z-index: 10;
+          position: fixed;
+          width: 100%;
+          height: 100vh;
+          background: rgba(0, 0, 0, 0.6);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          transform: translateY(0);
+      }
+
+
+      .modal {
+          margin-top: 3vh;
+          top: 0;
+          left: 50%;
+          background-color: #181818;
+          display: flex;
+          flex-direction: column;
+          max-width: 48vw;
+          max-height: 90vh;
+      }
+
+      .modalInfo {
+          display: flex;
+          color: white;
+          margin: .5rem 2rem 2.5rem;
+      }
+
+      .modalTextInfo {
+          display: flex;
+          margin-top: 2.5rem;
+      }
+
+      .modalDesc {
+          width: 75%;
+          display: flex;
+          flex-direction: column;
+      }
+
+      .techStack {
+          width: 25%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+      }
+  }
+
+@media (max-width: 470px) {
+    .modal {
+        width: 100vw;
+        padding: 0;
+        margin: 0;
+        height: var(--doc-height);
+        background-color: #181818;
+        overflow: scroll;
+    }
+
+
+    .modalClose {
+        width: 4rem;
+        height: 4rem;
+        transform: scale(1.8);
+        padding: 0.2rem;
+        border-radius: 50%;
+        background: black;
+        position: fixed;
+        top: 1.4rem;
+        right: 2rem;
+    }
+
+    .modalInfo {
+        display: flex;
+        color: white;
+        margin: .5rem 2rem 2.5rem;
+    }
+
+    .shadow {
+        z-index: 10;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.6);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: translateY(0);
+    }
+    .modalTextInfo {
+        display: flex;
+        flex-direction: column;
+        margin-top: 2.5rem;
+        font-size: 1.2rem;
+    }
+    .modalDesc {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .techStack {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        margin-top: 4rem;
+    }
+
+    .listItemModalImageWrapper {
+        background-color: #FFFFFF;
+    }
+}

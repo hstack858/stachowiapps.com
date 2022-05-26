@@ -1,0 +1,55 @@
+@media (min-width: 470px) {
+    .featured {
+        height: 100vh;
+        position: relative;
+        margin-bottom:  4vh;
+        background-image: url("https://netflix-site.s3.amazonaws.com/static/social_network.webp");
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+    }
+
+    .desktopFeatured {
+        display: flex;
+        flex-direction: column;
+        width: 33%;
+        position: absolute;
+        left: 5rem;
+        bottom: 5rem;
+        color: white;
+    }
+
+    .buttons {
+        display: flex;
+    }
+}
+
+@media (max-width: 470px) {
+    .featured {
+        height: 40vh;
+        background-image: url("https://netflix-site.s3.amazonaws.com/static/social_network.webp");
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+        margin-bottom: 1vh;
+        display: flex;
+    }
+
+    .mobileFeatured {
+        visibility: visible;
+    }
+
+    .desktopFeatured {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        transform: scale(0.6);
+        color: white;
+        position: relative;
+        bottom: 2rem;
+    }
+
+    .buttons {
+        display: none;
+    }
+}

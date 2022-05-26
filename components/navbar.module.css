@@ -1,0 +1,5 @@
+@media (max-width: 470px) {
+    .navbar {
+        visibility: hidden;
+    }
+}

@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import { PlayArrow } from "@material-ui/icons";
 import { Card } from "./constants/slider_data";
+import styles from "./list_item.module.css";
 
 interface ListItemProps {
   image: string;
@@ -33,7 +34,7 @@ const ListItem: React.FC<ListItemProps> = ({
 }) => {
   const renderBlurb = () => {
     if (blurb !== null) {
-      return <div className="desc">{blurb}</div>;
+      return <div className={styles.desc}>{blurb}</div>;
     }
     return <div />;
   };
@@ -41,7 +42,7 @@ const ListItem: React.FC<ListItemProps> = ({
   return (
     // eslint-disable-next-line jsx-a11y/click-events-have-key-events,jsx-a11y/no-static-element-interactions
     <div
-      className="list-item group"
+      className={`${styles.listItem} group`}
       onClick={() => {
         setModal({
           image,
@@ -56,22 +57,21 @@ const ListItem: React.FC<ListItemProps> = ({
         setOpen();
       }}
     >
-      <div className="image-wrapper z-0">
+      <div className={styles.imageWrapper}>
         <Image
           src={image}
           alt=""
-          className="card-image"
           width={750}
           height={400}
           layout="responsive"
         />
       </div>
-      <div className="itemInfo">
-        <div className="icons">
-          <PlayArrow className="icon" />
-          <span className="itemInfoTop">
+      <div className={styles.itemInfo}>
+        <div className={styles.icons}>
+          <PlayArrow className={styles.icon} />
+          <span className={styles.itemInfoTop}>
             <span>{role || title} </span>
-            <span className="date">{dateRange}</span>
+            <span className={styles.date}>{dateRange}</span>
             <span> {type}</span>
           </span>
         </div>

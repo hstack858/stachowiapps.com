@@ -1,0 +1,12 @@
+@media (min-width: 470px) {
+    .base {
+        justify-content: space-between;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.base {
+    overflow: hidden;
+    background-color: #0b0b0b;
+}

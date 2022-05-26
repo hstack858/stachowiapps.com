@@ -10,6 +10,7 @@ import {
   Card,
 } from "./constants/slider_data";
 import convertPixelsToRem from "../utils/pixels_to_rem";
+import styles from "./list.module.css";
 
 interface ListProps {
   title: string;
@@ -109,13 +110,13 @@ const List: React.FC<ListProps> = ({ title, setOpen, modalOpen, setModal }) => {
   };
 
   return (
-    <div id={getId()} className="list">
-      <span className="listTitle">{title}</span>
+    <div id={getId()} className={styles.list}>
+      <span className={styles.listTitle}>{title}</span>
       {/* WRAPPER */}
-      <div className="wrapper">
+      <div className={styles.wrapper}>
         {modalOpen ? null : (
           <ArrowBackIosNewOutlinedIcon
-            className="sliderArrow left"
+            className={`${styles.sliderArrow} ${styles.left}`}
             onClick={() => {
               if (!arrowDisabled) {
                 handleClick("left");
@@ -125,7 +126,7 @@ const List: React.FC<ListProps> = ({ title, setOpen, modalOpen, setModal }) => {
         )}
         {/* CONTAINER */}
         {/* @ts-ignore */}
-        <div className="cont" ref={listRef}>
+        <div className={styles.cont} ref={listRef}>
           {cards.map((card) => (
             // eslint-disable-next-line react/jsx-key
             <ListItem
@@ -144,7 +145,7 @@ const List: React.FC<ListProps> = ({ title, setOpen, modalOpen, setModal }) => {
         </div>
         {modalOpen ? null : (
           <ArrowForwardIosOutlinedIcon
-            className="sliderArrow right"
+            className={`${styles.sliderArrow} ${styles.right}`}
             onClick={() => {
               if (!arrowDisabled) {
                 handleClick("right");

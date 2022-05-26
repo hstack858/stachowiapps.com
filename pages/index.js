@@ -6,6 +6,7 @@ import ListItemModal from "../components/list_item_modal";
 import { experiences } from "../components/constants/slider_data";
 import { useState } from "react";
 import disableScroll from 'disable-scroll';
+import styles from "./index.module.css"
 
 export default function Home() {
   const [modal, setModal] = useState(experiences[0])
@@ -39,7 +40,7 @@ export default function Home() {
       </Head>
 
       <main>
-          <div className="base overflow-hidden bg-bgBlack">
+          <div className={styles.base}>
               <Navbar />
               <Featured  openModal={openFeaturedModal}/>
               {!open ? null :
