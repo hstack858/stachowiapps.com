@@ -84,13 +84,13 @@ const ListItemModal: React.FC<ListItemModalProps> = ({
               <div className={styles.modalDesc}>
                 <div>{blurb}</div>
                 <div className="ml-8">
-                  <ul>{renderBlurbBullets()}</ul>
+                  <ul className="list-disc">{renderBlurbBullets()}</ul>
                 </div>
               </div>
               {techStack === undefined ? null : (
                 <div className={styles.techStack}>
                   <div>Tech Stack:</div>
-                  <ul className="ml-8">{renderTechStack()}</ul>
+                  <ul className="ml-8 list-disc">{renderTechStack()}</ul>
                 </div>
               )}
             </div>
