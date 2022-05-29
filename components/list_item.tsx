@@ -13,13 +13,11 @@ interface ListItemProps {
   type: string;
   setOpen: () => void;
   setModal: (card: Card) => void;
-  // eslint-disable-next-line react/require-default-props
   techStack?: string[];
-  // eslint-disable-next-line react/require-default-props
   blurbBullets?: string[];
+  id: number;
 }
 
-// eslint-disable-next-line react/function-component-definition
 const ListItem: React.FC<ListItemProps> = ({
   image,
   title,
@@ -31,6 +29,7 @@ const ListItem: React.FC<ListItemProps> = ({
   setModal,
   techStack,
   blurbBullets,
+  id,
 }) => {
   const renderBlurb = () => {
     if (blurb !== null) {
@@ -40,8 +39,8 @@ const ListItem: React.FC<ListItemProps> = ({
   };
 
   return (
-    // eslint-disable-next-line jsx-a11y/click-events-have-key-events,jsx-a11y/no-static-element-interactions
     <div
+      role="listbox"
       className={`${styles.listItem} group`}
       onClick={() => {
         setModal({
@@ -53,6 +52,7 @@ const ListItem: React.FC<ListItemProps> = ({
           type,
           techStack,
           blurbBullets,
+          id,
         });
         setOpen();
       }}

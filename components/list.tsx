@@ -19,7 +19,6 @@ interface ListProps {
   setModal: (card: Card) => void;
 }
 
-// eslint-disable-next-line react/function-component-definition
 const List: React.FC<ListProps> = ({ title, setOpen, modalOpen, setModal }) => {
   const [cards, setCards] = useState<Card[]>([]);
   const [slideNum, setSlideNum] = useState(0);
@@ -89,7 +88,6 @@ const List: React.FC<ListProps> = ({ title, setOpen, modalOpen, setModal }) => {
       listRef.current.style.transform = `translateX(${adder + distance}rem)`;
     } else {
       const cardsPerRow = getCardNumPerRow();
-      console.log(cards.length, cardsPerRow, slideNum);
       if (direction === "right" && slideNum < cards.length - cardsPerRow) {
         setSlideNum(slideNum + 1);
         // @ts-ignore
@@ -112,7 +110,6 @@ const List: React.FC<ListProps> = ({ title, setOpen, modalOpen, setModal }) => {
   return (
     <div id={getId()} className={styles.list}>
       <span className={styles.listTitle}>{title}</span>
-      {/* WRAPPER */}
       <div className={styles.wrapper}>
         {modalOpen ? null : (
           <ArrowBackIosNewOutlinedIcon
@@ -124,11 +121,9 @@ const List: React.FC<ListProps> = ({ title, setOpen, modalOpen, setModal }) => {
             }}
           />
         )}
-        {/* CONTAINER */}
-        {/* @ts-ignore */}
+        {/*  @ts-ignore */}
         <div className={styles.cont} ref={listRef}>
           {cards.map((card) => (
-            // eslint-disable-next-line react/jsx-key
             <ListItem
               image={card.image}
               title={card.title}
@@ -140,6 +135,8 @@ const List: React.FC<ListProps> = ({ title, setOpen, modalOpen, setModal }) => {
               blurbBullets={card.blurbBullets}
               setModal={setModal}
               setOpen={setOpen}
+              id={card.id}
+              key={card.id}
             />
           ))}
         </div>

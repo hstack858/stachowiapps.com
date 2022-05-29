@@ -8,7 +8,6 @@ interface FeaturedProps {
   openModal: () => void;
 }
 
-// eslint-disable-next-line react/function-component-definition
 const Featured: React.FC<FeaturedProps> = ({ openModal }) => (
   <div className={styles.featured}>
     <div className={styles.desktopFeatured}>

@@ -22,6 +22,18 @@
                 "prettier",
                 "next"
             ],
+            "rules": {
+                "import/extensions": 0, // Turn off "Missing file extension for ..." error (doesn't like .ts files)
+                "import/prefer-default-export": 0, // Have constant files with multiple exports
+                "react/function-component-definition": "off", // Doesn't like standard component structure
+                "react/no-array-index-key": 0,
+                "prettier/prettier": "warn",
+                "react/prop-types": "off",
+                "no-param-reassign": "warn",
+                "react/require-default-props": "off",
+                "jsx-a11y/interactive-supports-focus": "off",
+                "jsx-a11y/click-events-have-key-events": "off"
+            },
             "parserOptions": {
                 "ecmaFeatures": {
                     "tsx": true
@@ -31,14 +43,5 @@
                 "project": "./tsconfig.json"
             }
         }
-    ],
-    "rules": {
-        "import/extensions": 0, // Turn off "Missing file extension for ..." error (doesn't like .ts files)
-        "import/prefer-default-export": 0, // Have constant files with multiple exports
-        "react/function-component-definition": 0, // Doesn't like standard component structure
-        "react/no-array-index-key": 0,
-        "prettier/prettier": "warn",
-        "react/prop-types": "off",
-        "no-param-reassign": "warn"
-    }
+    ]
 }

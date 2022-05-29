@@ -8,18 +8,14 @@ interface ListItemModalProps {
   setClosed: () => void;
   image: string;
   title: string;
-  // eslint-disable-next-line react/require-default-props
   role?: string;
   blurb: string;
   dateRange: string;
   type: string;
-  // eslint-disable-next-line react/require-default-props
   techStack?: string[];
-  // eslint-disable-next-line react/require-default-props
   blurbBullets?: string[];
 }
 
-// eslint-disable-next-line react/function-component-definition
 const ListItemModal: React.FC<ListItemModalProps> = ({
   open,
   setClosed,
@@ -34,17 +30,19 @@ const ListItemModal: React.FC<ListItemModalProps> = ({
 }) => {
   const renderBlurbBullets = () => {
     if (blurbBullets !== undefined) {
-      // eslint-disable-next-line react/jsx-key
-      return blurbBullets.map((bullet: string) => <li>{bullet}</li>);
+      return blurbBullets.map((bullet: string, index) => (
+        <li key={index}>{bullet}</li>
+      ));
     }
     return null;
   };
 
   const renderTechStack = () => {
     if (techStack !== undefined) {
-      return techStack.map((bullet: string) => (
-        // eslint-disable-next-line react/jsx-key
-        <li className="ml-8">{bullet}</li>
+      return techStack.map((bullet: string, index) => (
+        <li key={index} className="ml-8">
+          {bullet}
+        </li>
       ));
     }
     return null;
@@ -58,10 +56,9 @@ const ListItemModal: React.FC<ListItemModalProps> = ({
   };
 
   return (
-    // eslint-disable-next-line jsx-a11y/click-events-have-key-events,jsx-a11y/no-static-element-interactions
-    <div className={getModalClass()} onClick={setClosed}>
-      {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events,jsx-a11y/no-static-element-interactions */}
+    <div role="tab" className={getModalClass()} onClick={setClosed}>
       <div
+        role="tab"
         className={styles.modal}
         onClick={(event) => event.stopPropagation()}
       >

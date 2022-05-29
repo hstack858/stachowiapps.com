@@ -6,7 +6,6 @@ import ArticleIcon from "@mui/icons-material/Article";
 import Henflix from "../public/static/henflix.png";
 import styles from "./navbar.module.css";
 
-// eslint-disable-next-line react/function-component-definition
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
 
