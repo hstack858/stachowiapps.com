@@ -38,6 +38,19 @@ const ListItem: React.FC<ListItemProps> = ({
     return <div />;
   };
 
+  const isWhite = () => {
+    switch (id) {
+      case 12:
+        return true;
+      case 14:
+        return true;
+      case 16:
+        return true;
+      default:
+        return false;
+    }
+  };
+
   return (
     <div
       role="listbox"
@@ -57,7 +70,9 @@ const ListItem: React.FC<ListItemProps> = ({
         setOpen();
       }}
     >
-      <div className={styles.imageWrapper}>
+      <div
+        className={`${styles.imageWrapper} ${isWhite() ? styles.white : ""}`}
+      >
         <Image
           src={image}
           alt=""

@@ -93,7 +93,7 @@ const Navbar: React.FC = () => {
             <ArticleIcon className="mr-2" />
             <button type="button">
               <a
-                href="https://netflix-site.s3.amazonaws.com/static/HenryStachowiakResume.jpg"
+                href="https://netflix-site.s3.amazonaws.com/static/Screen+Shot+2022-07-13+at+10.39.31+PM.png"
                 download
               >
                 Resume

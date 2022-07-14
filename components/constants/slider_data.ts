@@ -46,23 +46,6 @@ export const experiences = [
     id: 2,
   },
   {
-    title: "Generate",
-    location: "Boston, MA",
-    dateRange: "8/21 - 12/21",
-    role: "Software Engineer",
-    techStack: ["React.js", "MongoDB", "GraphQL"],
-    blurb:
-      "Student-led project teams in the build studio collaborate to bring a real world client's vision to life.",
-    image: "https://netflix-site.s3.amazonaws.com/static/generate.jpg",
-    type: "FullStack",
-    blurbBullets: [
-      "Building a game that teaches players how to run a sustainable business",
-      "Writing API connections from our database to the frontend",
-      "Coding visual and interactive game scenarios on the frontend",
-    ],
-    id: 3,
-  },
-  {
     title: "PayPal",
     location: "San Jose, CA",
     dateRange: "6/22 - 9/22",
@@ -73,6 +56,23 @@ export const experiences = [
     image: "https://netflix-site.s3.amazonaws.com/static/paypal.png",
     type: "Backend",
     blurbBullets: ["Member of a payment transaction team"],
+    id: 3,
+  },
+  {
+    title: "Generate",
+    location: "Boston, MA",
+    dateRange: "8/21 - 12/21",
+    role: "Software Engineer",
+    techStack: ["React.js", "MongoDB", "GraphQL"],
+    blurb:
+      "Student-led project teams in the build studio collaborate to bring a real world client's vision to life.",
+    image: "https://netflix-site.s3.amazonaws.com/static/gen.png",
+    type: "FullStack",
+    blurbBullets: [
+      "Building a game that teaches players how to run a sustainable business",
+      "Writing API connections from our database to the frontend",
+      "Coding visual and interactive game scenarios on the frontend",
+    ],
     id: 4,
   },
 ];
@@ -206,31 +206,22 @@ export const skills = [
     id: 4,
   },
   {
-    title: "Javascript",
-    image: "https://netflix-site.s3.amazonaws.com/static/javascript.png",
-    type: "Frontend",
-    dateRange: "4/21",
-    blurb:
-      "A programming language that is one of the core technologies of the World Wide Web, alongside HTML and CSS. Over 97% of websites use JavaScript on the client side for web page behavior, often incorporating third-party libraries.",
-    id: 5,
-  },
-  {
-    title: "CSS",
-    image: "https://netflix-site.s3.amazonaws.com/static/css.jpeg",
-    type: "Frontend",
-    dateRange: "5/21",
-    blurb:
-      "Cascading Style Sheets is a style sheet language used for describing the presentation of a document written in a markup language such as HTML. CSS is a cornerstone technology of the World Wide Web, alongside HTML and JavaScript.",
-    id: 6,
-  },
-  {
     title: "TypeScript",
     image: "https://netflix-site.s3.amazonaws.com/static/typescript.png",
     type: "Frontend",
     dateRange: "5/21",
     blurb:
       "A programming language developed and maintained by Microsoft. It is a strict syntactical superset of JavaScript and adds optional static typing to the language. It is designed for the development of large applications and transpiles to JavaScript.",
-    id: 7,
+    id: 5,
+  },
+  {
+    title: "Javascript",
+    image: "https://netflix-site.s3.amazonaws.com/static/trio2.png",
+    type: "Frontend",
+    dateRange: "4/21",
+    blurb:
+      "A programming language that is one of the core technologies of the World Wide Web, alongside HTML and CSS. Over 97% of websites use JavaScript on the client side for web page behavior, often incorporating third-party libraries.",
+    id: 6,
   },
   {
     title: "MySQL",
@@ -269,7 +260,8 @@ export const skills = [
   },
   {
     title: "Next.js",
-    image: "https://netflix-site.s3.amazonaws.com/static/nextjs.png",
+    image:
+      "https://netflix-site.s3.amazonaws.com/static/800px-Nextjs-logo.svg.png",
     type: "Frontend",
     dateRange: "1/22",
     blurb:
@@ -287,7 +279,7 @@ export const skills = [
   },
   {
     title: "MobX",
-    image: "https://netflix-site.s3.amazonaws.com/static/new_mob.webp",
+    image: "https://netflix-site.s3.amazonaws.com/static/mobxx.png",
     type: "Frontend",
     dateRange: "5/21",
     blurb:
@@ -296,8 +288,7 @@ export const skills = [
   },
   {
     title: "React Testing Library",
-    image:
-      "https://netflix-site.s3.amazonaws.com/static/react-testing-library.webp",
+    image: "https://netflix-site.s3.amazonaws.com/static/rtl.jpeg",
     type: "Frontend",
     dateRange: "5/21",
     blurb:
@@ -306,8 +297,7 @@ export const skills = [
   },
   {
     title: "Git",
-    image:
-      "https://netflix-site.s3.amazonaws.com/static/git_and_github_logo.png",
+    image: "https://netflix-site.s3.amazonaws.com/static/GitHub-logo.png",
     type: "FullStack",
     dateRange: "2/20",
     blurb:
