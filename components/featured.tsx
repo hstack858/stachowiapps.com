@@ -19,9 +19,9 @@ const Featured: React.FC<FeaturedProps> = ({ openModal }) => (
         layout="responsive"
       />
       <span className="my-4 text-lg">
-        A college junior named Henry Stachowiak starts a sports betting site
-        with his genius roommate and faces the reality of venture capital
-        sharks. Will they crash and burn? Only time will tell.
+        A young software engineer named Henry Stachowiak joins a sportsbetting
+        social media startup . Will it actually become something? Only time will
+        tell.
       </span>
       <div className={styles.buttons}>
         <button
