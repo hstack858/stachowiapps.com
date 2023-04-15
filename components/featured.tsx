@@ -20,7 +20,7 @@ const Featured: React.FC<FeaturedProps> = ({ openModal }) => (
       />
       <span className="my-4 text-lg">
         A young software engineer named Henry Stachowiak joins a sportsbetting
-        social media startup . Will it actually become something? Only time will
+        social media startup. Will it actually become something? Only time will
         tell.
       </span>
       <div className={styles.buttons}>
