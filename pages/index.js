@@ -1,35 +1,41 @@
 import Head from 'next/head'
+import dynamic from 'next/dynamic'
 import Navbar from "../components/navbar";
 import Featured from "../components/featured";
 import List from "../components/list";
-import ListItemModal from "../components/list_item_modal";
 import { experiences } from "../components/constants/slider_data";
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import disableScroll from 'disable-scroll';
 import styles from "./index.module.css"
+
+// Dynamically import modal to reduce initial bundle size
+const ListItemModal = dynamic(() => import("../components/list_item_modal"), { 
+  ssr: false,
+  loading: () => <div className="loading-modal">Loading...</div>
+});
 
 export default function Home() {
   const [modal, setModal] = useState(experiences[0])
   const [open, setOpen] = useState(false)
 
-  const openModal = () => {
+  const openModal = useCallback(() => {
     if (window.innerWidth > 470) {
       disableScroll.on();
     }
     setOpen(true)
-  }
+  }, []);
 
-  const closeModal = () => {
+  const closeModal = useCallback(() => {
     if (window.innerWidth > 470) {
       disableScroll.off();
     }
     setOpen(false);
-  }
+  }, []);
 
-  const openFeaturedModal = () => {
+  const openFeaturedModal = useCallback(() => {
     setModal(experiences[0]);
     openModal();
-  }
+  }, [openModal]);
 
   return (
     <div className="home">

@@ -102,6 +102,8 @@
 
 .imageWrapper {
     z-index: 0;
+    background-color: #303030; /* Default background for all images */
+    position: relative;
 }
 
 .white {

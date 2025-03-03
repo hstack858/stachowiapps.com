@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { PlayArrow } from "@material-ui/icons";
+import PlayArrow from "@mui/icons-material/PlayArrow";
 import { Card } from "./constants/slider_data";
 import styles from "./list_item.module.css";
 
@@ -16,6 +16,7 @@ interface ListItemProps {
   techStack?: string[];
   blurbBullets?: string[];
   id: number;
+  index: number; // Position in the list for priority loading
 }
 
 const ListItem: React.FC<ListItemProps> = ({
@@ -30,6 +31,7 @@ const ListItem: React.FC<ListItemProps> = ({
   techStack,
   blurbBullets,
   id,
+  index,
 }) => {
   const renderBlurb = () => {
     if (blurb !== null) {
@@ -75,10 +77,14 @@ const ListItem: React.FC<ListItemProps> = ({
       >
         <Image
           src={image}
-          alt=""
+          alt={title}
           width={750}
           height={400}
           layout="responsive"
+          priority={index < 6} // Load first 6 images with priority
+          loading={index >= 6 ? "lazy" : undefined}
+          objectFit="cover"
+          sizes="(max-width: 470px) 35vw, (max-width: 1024px) 25vw, 14.063rem"
         />
       </div>
       <div className={styles.itemInfo}>
@@ -96,4 +102,5 @@ const ListItem: React.FC<ListItemProps> = ({
   );
 };
 
+// Disable memoization for now to fix image loading issue
 export default ListItem;

@@ -3,7 +3,6 @@ import Image from "next/image";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import ArticleIcon from "@mui/icons-material/Article";
-import Henflix from "../public/static/henflix.png";
 import styles from "./navbar.module.css";
 
 const Navbar: React.FC = () => {
@@ -42,8 +41,8 @@ const Navbar: React.FC = () => {
       <div className="flex justify-between items-center px-5 h-20">
         <div className="flex items-center">
           <Image
-            src={Henflix}
-            alt=""
+            src="https://netflix-site.s3.us-east-1.amazonaws.com/static/henflix.png"
+            alt="henflix logo"
             className="ml-12 mr-16"
             width={100}
             height={100}
@@ -93,7 +92,7 @@ const Navbar: React.FC = () => {
             <ArticleIcon className="mr-2" />
             <button type="button">
               <a
-                href="https://netflix-site.s3.amazonaws.com/static/Screen+Shot+2022-07-13+at+10.39.31+PM.png"
+                href="https://netflix-site.s3.us-east-1.amazonaws.com/static/HenryStachowiakResume2025.pdf"
                 download
               >
                 Resume

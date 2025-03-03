@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, useMemo } from "react";
 import ArrowBackIosNewOutlinedIcon from "@mui/icons-material/ArrowBackIosNewOutlined";
 import ArrowForwardIosOutlinedIcon from "@mui/icons-material/ArrowForwardIosOutlined";
 import ListItem from "./list_item";
@@ -24,20 +24,25 @@ const List: React.FC<ListProps> = ({ title, setOpen, modalOpen, setModal }) => {
   const [slideNum, setSlideNum] = useState(0);
   const [arrowDisabled, setArrowDisabled] = useState(false);
 
+  // Map titles to their respective data arrays
+  const titleToDataMap = useMemo(() => ({
+    "Experiences": experiences,
+    "Skills": skills,
+    "Awards/Certifications": awards,
+    "Projects": projects
+  }), []);
+
+  // Use a stable reference for cards based on title
+  const stableCards = useMemo(() => {
+    const dataArray = titleToDataMap[title] || [];
+    // Create a deep clone to prevent any reference issues
+    return JSON.parse(JSON.stringify(dataArray)).sort((a, b) => a.id - b.id);
+  }, [title, titleToDataMap]);
+  
+  // Update cards state only once on mount or title change
   useEffect(() => {
-    if (title === "Experiences") {
-      setCards(experiences);
-    }
-    if (title === "Skills") {
-      setCards(skills);
-    }
-    if (title === "Awards/Certifications") {
-      setCards(awards);
-    }
-    if (title === "Projects") {
-      setCards(projects);
-    }
-  }, [cards, title]);
+    setCards(stableCards);
+  }, [stableCards]);
 
   const getCardNumPerRow = () => {
     const screenWidth = window.innerWidth;
@@ -123,22 +128,27 @@ const List: React.FC<ListProps> = ({ title, setOpen, modalOpen, setModal }) => {
         )}
         {/*  @ts-ignore */}
         <div className={styles.cont} ref={listRef}>
-          {cards.map((card) => (
-            <ListItem
-              image={card.image}
-              title={card.title}
-              role={card.role ? card.role : ""}
-              blurb={card.blurb}
-              dateRange={card.dateRange}
-              type={card.type}
-              techStack={card.techStack}
-              blurbBullets={card.blurbBullets}
-              setModal={setModal}
-              setOpen={setOpen}
-              id={card.id}
-              key={card.id}
-            />
-          ))}
+          {stableCards.map((card, index) => {
+            // Ensure the image URL is correct and not altered
+            const imageUrl = card.image.trim();
+            return (
+              <ListItem
+                image={imageUrl}
+                title={card.title}
+                role={card.role ? card.role : ""}
+                blurb={card.blurb}
+                dateRange={card.dateRange}
+                type={card.type}
+                techStack={card.techStack}
+                blurbBullets={card.blurbBullets}
+                setModal={setModal}
+                setOpen={setOpen}
+                id={card.id}
+                key={`${title}-${card.id}-${index}`}
+                index={index}
+              />
+            );
+          })}
         </div>
         {modalOpen ? null : (
           <ArrowForwardIosOutlinedIcon
@@ -154,4 +164,4 @@ const List: React.FC<ListProps> = ({ title, setOpen, modalOpen, setModal }) => {
     </div>
   );
 };
-export default List;
+export default React.memo(List);

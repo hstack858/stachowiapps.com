@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
-import { InfoOutlined, PlayArrow } from "@material-ui/icons";
-import SocialNetworkTitle from "../public/static/social_network_title.png";
+import InfoOutlined from "@mui/icons-material/InfoOutlined";
+import PlayArrow from "@mui/icons-material/PlayArrow";
 import styles from "./featured.module.css";
 
 interface FeaturedProps {
@@ -12,16 +12,19 @@ const Featured: React.FC<FeaturedProps> = ({ openModal }) => (
   <div className={styles.featured}>
     <div className={styles.desktopFeatured}>
       <Image
-        src={SocialNetworkTitle}
-        alt=""
+        src="https://netflix-site.s3.us-east-1.amazonaws.com/static/social_network_title.png"
+        alt="social network title"
         width={100}
         height={50}
         layout="responsive"
+        priority
+        quality={90}
+        placeholder="blur"
+        blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
       />
       <span className="my-4 text-lg">
-        A young software engineer named Henry Stachowiak joins a sportsbetting
-        social media startup. Will it actually become something? Only time will
-        tell.
+        A young software engineer named Henry Stachowiak is back on the job
+        hunt. Where will he end up working? Only time will tell...
       </span>
       <div className={styles.buttons}>
         <button
@@ -44,4 +47,4 @@ const Featured: React.FC<FeaturedProps> = ({ openModal }) => (
     </div>
   </div>
 );
-export default Featured;
+export default React.memo(Featured);

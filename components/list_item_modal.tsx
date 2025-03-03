@@ -100,4 +100,4 @@ const ListItemModal: React.FC<ListItemModalProps> = ({
     </div>
   );
 };
-export default ListItemModal;
+export default React.memo(ListItemModal);
