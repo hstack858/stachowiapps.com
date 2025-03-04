@@ -24,19 +24,19 @@ const List: React.FC<ListProps> = ({ title, setOpen, modalOpen, setModal }) => {
   const [slideNum, setSlideNum] = useState(0);
   const [arrowDisabled, setArrowDisabled] = useState(false);
 
-  // Map titles to their respective data arrays
+  // Map titles to their respective data arrays with proper typing
   const titleToDataMap = useMemo(() => ({
     "Experiences": experiences,
     "Skills": skills,
     "Awards/Certifications": awards,
     "Projects": projects
-  }), []);
+  } as Record<string, Card[]>), []);
 
   // Use a stable reference for cards based on title
   const stableCards = useMemo(() => {
     const dataArray = titleToDataMap[title] || [];
     // Create a deep clone to prevent any reference issues
-    return JSON.parse(JSON.stringify(dataArray)).sort((a, b) => a.id - b.id);
+    return JSON.parse(JSON.stringify(dataArray)).sort((a: Card, b: Card) => a.id - b.id);
   }, [title, titleToDataMap]);
   
   // Update cards state only once on mount or title change
@@ -70,7 +70,7 @@ const List: React.FC<ListProps> = ({ title, setOpen, modalOpen, setModal }) => {
     return 2;
   };
 
-  const listRef = useRef();
+  const listRef = useRef<HTMLDivElement>(null);
 
   const handleClick = (direction: string) => {
     let adder = 0;
@@ -82,21 +82,22 @@ const List: React.FC<ListProps> = ({ title, setOpen, modalOpen, setModal }) => {
 
     setArrowDisabled(true);
     let rect = 0;
-    if (listRef !== undefined) {
-      // @ts-ignore
+    if (listRef.current) {
       rect = listRef.current.getBoundingClientRect().x - 50;
     }
     const distance = convertPixelsToRem(rect);
     if (direction === "left" && slideNum > 0) {
       setSlideNum(slideNum - 1);
-      // @ts-ignore
-      listRef.current.style.transform = `translateX(${adder + distance}rem)`;
+      if (listRef.current) {
+        listRef.current.style.transform = `translateX(${adder + distance}rem)`;
+      }
     } else {
       const cardsPerRow = getCardNumPerRow();
       if (direction === "right" && slideNum < cards.length - cardsPerRow) {
         setSlideNum(slideNum + 1);
-        // @ts-ignore
-        listRef.current.style.transform = `translateX(${-adder + distance}rem)`;
+        if (listRef.current) {
+          listRef.current.style.transform = `translateX(${-adder + distance}rem)`;
+        }
       }
     }
   };
@@ -126,9 +127,8 @@ const List: React.FC<ListProps> = ({ title, setOpen, modalOpen, setModal }) => {
             }}
           />
         )}
-        {/*  @ts-ignore */}
         <div className={styles.cont} ref={listRef}>
-          {stableCards.map((card, index) => {
+          {stableCards.map((card: Card, index: number) => {
             // Ensure the image URL is correct and not altered
             const imageUrl = card.image.trim();
             return (
